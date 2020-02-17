@@ -38,9 +38,9 @@
 *.color15: #fdf6e3
 
 !! URxvt Appearance
-URxvt.font: -*-rissole-*
-URxvt.boldFont: -*-rissole-*
-URxvt.italicFont: -*-rissole-*
+URxvt.font: xft:bitstream vera sans mono:size=16:antialias=true
+URxvt.boldFont: xft:bitstream vera sans mono:bold:size=16:antialias=true
+URxvt.italicFont: xft:bitstream vera sans mono:italic:size=16:antialias=true
 URxvt.boldItalicfont: -*-rissole-*
 URxvt.letterSpace: 0
 URxvt.lineSpace: 0
