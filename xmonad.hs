@@ -6,12 +6,14 @@ import XMonad.Util.EZConfig(additionalKeys)
 import System.IO
 import XMonad.Config.Desktop
 import XMonad.Wallpaper
+import qualified XMonad.StackSet as W
+import XMonad.Util.EZConfig
 
 main = do
        xmproc <- spawnPipe "xmobar"
        xmproc <- spawnPipe "xscreensaver -nosplash"
 
-       setRandomWallpaper ["$HOME/Images"]
+       setRandomWallpaper ["$HOME/Images/Wallpapers"]
        xmonad $ defaultConfig { manageHook = manageDocks <+> manageHook defaultConfig
                               , layoutHook = avoidStruts $ layoutHook defaultConfig
                               , handleEventHook = handleEventHook defaultConfig <+> docksEventHook
@@ -19,9 +21,18 @@ main = do
                               , normalBorderColor = myNormalBorderColor
                               , focusedBorderColor = myFocusedBorderColor
                               , borderWidth = myBorderWidth
-                              }
+                              }  `additionalKeysP`
+                                [ ("M-<Up>", windows W.swapUp)
+                                , ("M-f", spawn "firefox")
+                                , ("M-c", spawn "google-chrome")
+                                , ("M-e", spawn "emacs")
+                                , ("M-s", spawn "spotify")
+                                , ("M-v", spawn "code")
+                                , ("M-n", spawn "nautilus")
+                                , ("M-l", spawn "xscreensaver-command -lock")
+                              ]
 
-myTerminal = "urxvt"
+myTerminal = "terminator"
 myBorderWidth = 2
 myNormalBorderColor = "black"
 myFocusedBorderColor = "red"
