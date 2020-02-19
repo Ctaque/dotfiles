@@ -23,6 +23,7 @@ main = do
                               , borderWidth = myBorderWidth
                               }  `additionalKeysP`
                                 [ ("M-<Up>", windows W.swapUp)
+                                , ("M-<Down>", windows W.swapDown)
                                 , ("M-f", spawn "firefox")
                                 , ("M-c", spawn "google-chrome")
                                 , ("M-e", spawn "emacs")
