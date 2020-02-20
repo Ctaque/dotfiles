@@ -8,6 +8,7 @@ import XMonad.Config.Desktop
 import qualified XMonad.StackSet as W
 import XMonad.Util.EZConfig
 
+main :: IO ()
 main = do
        xmproc <- spawnPipe "xmobar"
        xmproc <- spawnPipe "xscreensaver -nosplash"
