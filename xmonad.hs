@@ -10,7 +10,7 @@ import XMonad.Util.EZConfig
 
 main :: IO ()
 main = do
-       xmproc <- spawnPipe "xmobar"
+       h <- spawnPipe "xmobar"
        xmproc <- spawnPipe "xscreensaver -nosplash"
        xmproc <- spawnPipe "dmenu"
        xmproc <- spawnPipe "feh $HOME/Images/Wallpapers"
@@ -19,6 +19,10 @@ main = do
                               , layoutHook = avoidStruts $ layoutHook defaultConfig
                               , handleEventHook = handleEventHook defaultConfig <+> docksEventHook
                               , terminal = myTerminal
+                              , logHook = dynamicLogWithPP $
+                                          xmobarPP {
+                                                      ppOutput = hPutStrLn h
+                                                   }
                               , workspaces = myWorkspaces
                               , normalBorderColor = myNormalBorderColor
                               , focusedBorderColor = myFocusedBorderColor
