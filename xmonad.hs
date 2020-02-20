@@ -12,12 +12,14 @@ main :: IO ()
 main = do
        xmproc <- spawnPipe "xmobar"
        xmproc <- spawnPipe "xscreensaver -nosplash"
+       xmproc <- spawnPipe "dmenu"
        xmproc <- spawnPipe "feh $HOME/Images/Wallpapers"
 
        xmonad $ defaultConfig { manageHook = manageDocks <+> manageHook defaultConfig
                               , layoutHook = avoidStruts $ layoutHook defaultConfig
                               , handleEventHook = handleEventHook defaultConfig <+> docksEventHook
                               , terminal = myTerminal
+                              , workspaces = myWorkspaces
                               , normalBorderColor = myNormalBorderColor
                               , focusedBorderColor = myFocusedBorderColor
                               , borderWidth = myBorderWidth
@@ -37,3 +39,5 @@ myKeys = [ ("M-<Up>", windows W.swapUp)
          , ("M-n", spawn "nautilus")
          , ("M-l", spawn "xscreensaver-command -lock")
          ]
+myWorkspaces :: [String]
+myWorkspaces = ["1:Web", "2:Work", "3:Media"]
