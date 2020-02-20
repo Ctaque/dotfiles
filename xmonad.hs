@@ -20,19 +20,19 @@ main = do
                               , normalBorderColor = myNormalBorderColor
                               , focusedBorderColor = myFocusedBorderColor
                               , borderWidth = myBorderWidth
-                              }  `additionalKeysP`
-                                [ ("M-<Up>", windows W.swapUp)
-                                , ("M-<Down>", windows W.swapDown)
-                                , ("M-f", spawn "firefox")
-                                , ("M-c", spawn "google-chrome")
-                                , ("M-e", spawn "emacs")
-                                , ("M-s", spawn "spotify")
-                                , ("M-v", spawn "code")
-                                , ("M-n", spawn "nautilus")
-                                , ("M-l", spawn "xscreensaver-command -lock")
-                              ]
+                              }  `additionalKeysP` myKeys
 
 myTerminal = "terminator"
 myBorderWidth = 2
 myNormalBorderColor = "black"
 myFocusedBorderColor = "#8908F0"
+myKeys = [ ("M-<Up>", windows W.swapUp)
+         , ("M-<Down>", windows W.swapDown)
+         , ("M-f", spawn "firefox")
+         , ("M-c", spawn "google-chrome")
+         , ("M-e", spawn "emacs")
+         , ("M-s", spawn "spotify")
+         , ("M-v", spawn "code")
+         , ("M-n", spawn "nautilus")
+         , ("M-l", spawn "xscreensaver-command -lock")
+         ]
