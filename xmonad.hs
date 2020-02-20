@@ -35,4 +35,4 @@ main = do
 myTerminal = "terminator"
 myBorderWidth = 2
 myNormalBorderColor = "black"
-myFocusedBorderColor = "red"
+myFocusedBorderColor = "#8908F0"
