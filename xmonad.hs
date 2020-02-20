@@ -4,7 +4,7 @@ import XMonad.Hooks.ManageDocks
 import XMonad.Util.Run(spawnPipe)
 import XMonad.Util.EZConfig(additionalKeys)
 import System.IO
-import XMonad.Config.Desktop
+import XMonad.Config.Azerty
 import qualified XMonad.StackSet as W
 import XMonad.Util.EZConfig
 
@@ -15,7 +15,7 @@ main = do
        xmproc <- spawnPipe "dmenu"
        xmproc <- spawnPipe "feh $HOME/Images/Wallpapers"
 
-       xmonad $ defaultConfig { manageHook = manageDocks <+> manageHook defaultConfig
+       xmonad $ azertyConfig { manageHook = manageDocks <+> manageHook defaultConfig
                               , layoutHook = avoidStruts $ layoutHook defaultConfig
                               , handleEventHook = handleEventHook defaultConfig <+> docksEventHook
                               , terminal = myTerminal
