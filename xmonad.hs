@@ -42,6 +42,7 @@ myKeys = [ ("M-<Up>", windows W.swapUp)
          , ("M-v", spawn "code")
          , ("M-n", spawn "nautilus")
          , ("M-l", spawn "xscreensaver-command -lock")
+         , ("M-o", spawn "rofi -show run")
          ]
 myWorkspaces :: [String]
 myWorkspaces = ["1:Web", "2:Work", "3:Media"]
