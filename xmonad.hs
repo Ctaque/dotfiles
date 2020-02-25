@@ -41,7 +41,7 @@ myKeys = [ ("M-<Up>", windows W.swapUp)
          , ("M-m", spawn "spotify")
          , ("M-v", spawn "code")
          , ("M-n", spawn "nautilus")
-         , ("M-l", spawn "xscreensaver-command -lock")
+         , ("M-<Return>", spawn "xscreensaver-command -lock")
          , ("M-<Pause>", spawn "xscreensaver-command -lock & systemctl suspend")
          , ("M-o", spawn "rofi -combi-modi window,drun,ssh -show combi")
          ]
