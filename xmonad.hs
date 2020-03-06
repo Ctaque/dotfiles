@@ -7,6 +7,8 @@ import System.IO
 import XMonad.Config.Azerty
 import qualified XMonad.StackSet as W
 import XMonad.Util.EZConfig
+import XMonad.Layout.Spacing
+import XMonad.Util.Cursor
 
 main :: IO ()
 main = do
@@ -16,13 +18,14 @@ main = do
        xmproc <- spawnPipe "feh $HOME/Images/Wallpapers"
 
        xmonad $ azertyConfig { manageHook = manageDocks <+> manageHook defaultConfig
-                              , layoutHook = avoidStruts $ layoutHook defaultConfig
+                              , layoutHook = myLayoutHook
                               , handleEventHook = handleEventHook defaultConfig <+> docksEventHook
                               , terminal = myTerminal
                               , logHook = dynamicLogWithPP $
                                           xmobarPP {
                                                       ppOutput = hPutStrLn h
                                                    }
+                              , startupHook = setDefaultCursor xC_pirate
                               , workspaces = myWorkspaces
                               , normalBorderColor = myNormalBorderColor
                               , focusedBorderColor = myFocusedBorderColor
@@ -33,6 +36,7 @@ myTerminal = "terminator"
 myBorderWidth = 2
 myNormalBorderColor = "black"
 myFocusedBorderColor = "#8908F0"
+myLayoutHook = avoidStruts $ layoutHook def
 myKeys = [ ("M-<Up>", windows W.swapUp)
          , ("M-<Down>", windows W.swapDown)
          , ("M-f", spawn "firefox")
