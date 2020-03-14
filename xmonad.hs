@@ -36,7 +36,7 @@ myTerminal = "terminator"
 myBorderWidth = 2
 myNormalBorderColor = "black"
 myFocusedBorderColor = "#8908F0"
-myLayoutHook = avoidStruts $ layoutHook def
+myLayoutHook = avoidStruts $ spacing 10 $ layoutHook def
 myKeys = [ ("M-<Up>", windows W.swapUp)
          , ("M-<Down>", windows W.swapDown)
          , ("M-f", spawn "firefox")
