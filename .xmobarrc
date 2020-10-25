@@ -1,9 +1,10 @@
-Config { font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
+Config { font = "JetBrains Mono:size=20:light:antialias=true"
+       -- , font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
        , additionalFonts = []
        , borderColor = "black"
-       , border = TopB
+       , border = BottomB
        , bgColor = "black"
-       , fgColor = "grey"
+       , fgColor = "#b100e8"
        , alpha = 255
        , position = Top
        , textOffset = -1
@@ -17,15 +18,15 @@ Config { font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
        , overrideRedirect = True
        , commands = [ Run Weather "LFRS" ["-t","<station>: <tempC>C",
                                           "-L","18","-H","25",
-                                          "--normal","green",
-                                          "--high","red",
-                                          "--low","lightblue"] 36000
+                                          "--normal","#95e1d3",
+                                          "--high","#f38181",
+                                          "--low","#cbf1f5"] 36000
                     , Run Network "eth0" ["-L","0","-H","32",
-                                          "--normal","green","--high","red"] 10
+                                          "--normal","#95e1d3","--high","#f38181"] 10
                     , Run Network "eth1" ["-L","0","-H","32",
-                                          "--normal","green","--high","red"] 10
+                                          "--normal","#95e1d3","--high","#f38181"] 10
                     , Run Cpu ["-L","3","-H","50",
-                               "--normal","green","--high","red"] 10
+                               "--normal","#95e1d3","--high","#f38181"] 10
                     , Run Memory ["-t","Mem: <usedratio>%"] 10
                     , Run Swap [] 10
                     , Run Com "uname" ["-s","-r"] "" 36000
@@ -34,6 +35,6 @@ Config { font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader%   |   %cpu%   |   %memory%  |  %swap% }\
-                    \{ <fc=#ee9a00>%date%</fc>  |   %LFRS%"
+       , template = "<fc=#b100e8>%StdinReader%</fc>   |   %cpu%   |   %memory%  |  %swap% }\
+                    \{ <fc=#b100e8>%date%</fc>  |   %LFRS%"
        }
