@@ -42,21 +42,21 @@ memory {
 }
 
 tztime local {
-    format = "%d/%m/%Y %H:%M:%S"
+    format = "⌚ %d/%m/%Y %H:%M:%S"
 }
 
 cpu_usage {
-    format = "CPU %usage"
+    format = "⚡CPU %usage"
 	max_threshold = 90
 	degraded_threshold = 75
 }
 
 disk "/" {
-	format = "ROOT %avail"
+	format = "⛁ ROOT %avail"
 }
 
 disk "/home" {
-    format = "HOME %avail"
+    format = "⛁ HOME %avail"
 }
 
 volume master {

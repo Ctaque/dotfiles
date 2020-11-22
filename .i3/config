@@ -147,7 +147,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
     position top
-    font pango:DejaVu Sans Mono FontAwesome 7.9
+    font pango:DejaVu Sans Mono 8, FontAwesome 8
     separator_symbol ":|:"
 	colors{
 		# Colouring for desktop selector
