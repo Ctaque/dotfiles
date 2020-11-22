@@ -278,5 +278,8 @@ force_display_urgency_hint 1000 ms
 #wallpaper
 exec feh --bg-scale ~/Images/wallpaper.jpg
 
-#compton
+#picom (transparency of the windows)
 exec picom --config ~/.i3/picom.conf
+
+exec latte-dock
+
