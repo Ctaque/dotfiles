@@ -148,17 +148,19 @@ bindsym $mod+r mode "resize"
 bar {
     position top
     font pango:DejaVu Sans Mono FontAwesome 7.9
+    separator_symbol ":|:"
 	colors{
 		# Colouring for desktop selector
 		background #0000000
-		statusline #ffffff
+		statusline #9c27b0
 		# class             border backgr  text
 		focused_workspace  #9c27b0 #9c27b0 #ffffff
 		inactive_workspace #545454 #202020 #ffffff
 		active_workspace   #545454 #202020 #ffffff
 		urgent_workspace   #ff0000 #700e0e #ffffff
 	}
-        status_command ~/.cargo/bin/i3status-rs ~/.i3/i3status-rust.toml
+        # status_command ~/.cargo/bin/i3status-rs ~/.i3/i3status-rust.toml
+        status_command i3status --config ~/.i3/i3status
 }
 
 
