@@ -175,7 +175,7 @@ bar {
 # bindsym $mod+l exec light-locker-command -l
 
 # Alternative lock screen
-bindsym $mod+z exec i3lock --image="/home/cyprien/Images/Wallpapers/lock.jpg" -fe
+bindsym $mod+z exec i3lock --image="/home/cyprien/.i3/images/c\&h.png" -fe
 
 # Screenshot
 # bindsym $mod+Print exec xfce4-screenshooter
@@ -276,7 +276,7 @@ force_display_urgency_hint 1000 ms
 # exec unclutter -idle 10 -noevents -reset
 
 #wallpaper
-exec feh --bg-scale ~/Images/wallpaper.jpg
+exec feh --bg-scale ~/.i3/images/wallpaper.jpg
 
 #picom (transparency of the windows)
 exec picom --config ~/.i3/picom.conf
