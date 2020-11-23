@@ -175,7 +175,7 @@ bar {
 # bindsym $mod+l exec light-locker-command -l
 
 # Alternative lock screen
-bindsym $mod+z exec i3lock --image="/home/cyprien/.i3/images/c\&h.png" -fe
+bindsym $mod+z exec i3lock --image=/home/cyprien/.i3/images/c\&h.png -fe
 
 # Screenshot
 # bindsym $mod+Print exec xfce4-screenshooter
@@ -186,6 +186,7 @@ bindsym $mod+s exec emacs
 bindsym $mod+m exec spotify
 bindsym $mod+f exec firefox
 bindsym $mod+v exec code
+bindsym $mod+n exec nautilus
 
 
 
