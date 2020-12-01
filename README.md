@@ -9,5 +9,8 @@
 - - picom
 - - i3lock
 - - latte-dock
+
+.desktop :
+/usr/share/xsessions/i3.desktop
 -
 -
